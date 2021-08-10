@@ -46,7 +46,6 @@ export default () => (
 );
 
 const BlogRoll = styled.div`
-  // margin-top: 0;
   padding: 0 1em;
 `;
 

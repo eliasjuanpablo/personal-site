@@ -9,10 +9,6 @@ const theme = {
   background: "#eee",
 };
 
-/* TODO: 
-  - create SideBar component for bigger viewports
-*/
-
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
@@ -26,7 +22,7 @@ const Layout = ({ children }) => (
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    font-size: 16px;
+    font-size: 4vw;
   }
 
   *,
@@ -63,6 +59,7 @@ const Wrapper = styled.div`
 
 const Content = styled.div`
   min-height: 100vh;
+  display: block;
 `;
 
 export default Layout;

@@ -9,8 +9,8 @@ const Navbar = () => {
         <Link to="/">jpelias</Link>
       </Brand>
       <Links>
-        <Link to="/blog">blog</Link>
-        <Link to="/portfolio">portfolio</Link>
+        <NavLink to="/">me</NavLink>
+        <NavLink to="/blog">blog</NavLink>
       </Links>
     </Nav>
   );
@@ -18,23 +18,17 @@ const Navbar = () => {
 
 const Nav = styled.div`
   color: ${(props) => props.theme.primary};
-  font-size: 1.2em;
+  font-size: 1.2rem;
   font-family: monospace;
+  border-bottom: 1px solid ${(props) => props.theme.primary};
 
-  display: none;
-
-  @media (max-width: 640px) {
-    display: flex;
-  }
+  display: flex;
 `;
 
 const Brand = styled.div`
   font-weight: 800;
-  flex: 0 0 40%;
+  flex: 0 0 50%;
   padding: 0.5em;
-  border: 1px solid ${(props) => props.theme.primary};
-  border-top: none;
-  border-left: none;
   text-align: center;
 `;
 
@@ -45,13 +39,14 @@ const Links = styled.div`
   align-items: center;
   margin-top: 0;
 
-  border: 1px solid ${(props) => props.theme.primary};
-  border-bottom: none;
-  border-left: none;
-
   & a {
     margin-top: 0;
   }
+`;
+
+const NavLink = styled(Link)`
+  text-decoration: ${(props) =>
+    window.location.pathname === props.to ? "underline" : ""};
 `;
 
 export default Navbar;
