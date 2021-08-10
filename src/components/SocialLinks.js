@@ -6,14 +6,15 @@ const SvgIcon = ({ children, iconSize }) => (
     xmlns="http://www.w3.org/2000/svg"
     width={iconSize}
     height={iconSize}
-    viewBox={`0 0 ${iconSize} ${iconSize}`}
+    viewBox={`0 0 24 24`}
   >
     {children}
   </svg>
 );
 
 const SocialLinks = () => {
-  const iconSize = 24; // TODO: map sizes per viewport
+  const vw = window.innerWidth;
+  const iconSize = vw < 768 ? vw * 0.1 : vw * 0.08;
 
   return (
     <Wrapper>
