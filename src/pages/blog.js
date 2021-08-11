@@ -10,6 +10,7 @@ const BlogPage = ({ data }) => {
   return (
     <Layout>
       <BlogRoll>
+        <Title>Blog</Title>
         {posts.map(({ id, date, title, description }) => (
           <PostCard
             key={id}
@@ -44,6 +45,8 @@ export default () => (
     render={(data) => <BlogPage data={data} />}
   />
 );
+
+const Title = styled.h1``;
 
 const BlogRoll = styled.div`
   padding: 0 1em;

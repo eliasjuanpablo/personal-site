@@ -46,7 +46,9 @@ const Links = styled.div`
 
 const NavLink = styled(Link)`
   text-decoration: ${(props) =>
-    window.location.pathname === props.to ? "underline" : ""};
+    typeof window !== "undefined" && window.location.pathname === props.to
+      ? "underline"
+      : ""};
 `;
 
 export default Navbar;

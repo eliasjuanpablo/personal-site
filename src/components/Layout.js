@@ -38,9 +38,13 @@ const GlobalStyle = createGlobalStyle`
     background: ${(props) => props.theme.background};
   }
 
+  h1 {
+    margin: 0;
+  }
+
   a {
     text-decoration: none;
-    color: ${(props) => props.theme.primary}
+    color: ${(props) => props.theme.primary};
   }
 
   * + * {

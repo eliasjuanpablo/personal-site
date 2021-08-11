@@ -20,6 +20,7 @@ const IndexPage = () => {
             <br />I love coding, <Link to="/blog">writing</Link> and playing
             chess.
           </Bio>
+          <p>Feel free to reach out at:</p>
           <SocialLinks />
         </Profile>
       </Wrapper>
