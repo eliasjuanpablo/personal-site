@@ -1,15 +1,38 @@
+const path = require("path");
 const { createFilePath } = require(`gatsby-source-filesystem`);
+
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const { createPage } = actions;
+
+  const result = await graphql(`
+    query PostsQuery {
+      allMarkdownRemark {
+        nodes {
+          id
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  `);
+  const postTemplate = path.resolve(`src/templates/blog-post.js`);
+
+  result.data.allMarkdownRemark.nodes.forEach(({ fields }) => {
+    createPage({ path: fields.slug, component: postTemplate });
+  });
+};
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode });
+    const slug = createFilePath({ node, getNode });
 
     createNodeField({
       name: `slug`,
       node,
-      value,
+      value: `/blog${slug}`,
     });
   }
 };

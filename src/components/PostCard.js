@@ -1,18 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { Link } from "gatsby";
 
-const PostCard = ({ title, description, publishedDate }) => {
+const PostCard = ({ title, description, publishedDate, slug }) => {
   return (
     <Card>
-      <Header>
-        <Title>{title}</Title>
-        <PublishedDate>
-          {new Date(publishedDate).toLocaleDateString()}
-        </PublishedDate>
-      </Header>
+      <Link to={slug}>
+        <Header>
+          <Title>{title}</Title>
+          <PublishedDate>
+            {new Date(publishedDate).toLocaleDateString()}
+          </PublishedDate>
+        </Header>
 
-      <Description>{description}</Description>
+        <Description>{description}</Description>
+      </Link>
     </Card>
   );
 };
