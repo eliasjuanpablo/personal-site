@@ -36,6 +36,10 @@ const Card = styled.div`
   box-shadow: 1px 6px 6px 0px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 1px 6px 6px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 6px 6px 0px rgba(0, 0, 0, 0.2);
+
+  & a {
+    color: inherit;
+  }
 `;
 
 const Header = styled.div`
@@ -45,6 +49,7 @@ const Header = styled.div`
 
 const Title = styled.div`
   font-weight: 600;
+  color: ${(props) => props.theme.primary};
 `;
 
 const Description = styled.div``;

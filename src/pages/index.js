@@ -53,6 +53,9 @@ const Greetings = styled.div`
 const Avatar = styled.img`
   display: block;
   width: 50vw;
+  @media (min-width: 600px) {
+    width: 30vw;
+  }
   border-radius: 100%;
   border: 2px solid ${(props) => props.theme.primary};
 `;

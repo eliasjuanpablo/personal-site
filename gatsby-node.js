@@ -18,8 +18,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   `);
   const postTemplate = path.resolve(`src/templates/blog-post.js`);
 
-  result.data.allMarkdownRemark.nodes.forEach(({ fields }) => {
-    createPage({ path: fields.slug, component: postTemplate });
+  result.data.allMarkdownRemark.nodes.forEach(({ id, fields: { slug } }) => {
+    createPage({ path: slug, component: postTemplate, context: { id } });
   });
 };
 

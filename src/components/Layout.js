@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 
 const theme = {
-  primary: "rebeccapurple",
+  primary: "purple",
   secondary: "white",
   background: "#eee",
 };
@@ -23,11 +23,14 @@ const Layout = ({ children }) => (
 const GlobalStyle = createGlobalStyle`
   :root {
     font-size: 4vw;
+    @media (min-width: 600px) { 
+      font-size: 3vw;
+    }
   }
 
   *,
-  *::before,
-  *::after {
+  *:before,
+  *:after {
     box-sizing: border-box;
   }
 
@@ -48,7 +51,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   * + * {
-  margin-top: 1em;
+    margin-top: 1em;
   }
 
   #query-on-demand-indicator-element {
