@@ -56,6 +56,9 @@ const Avatar = styled.img`
   @media (min-width: 600px) {
     width: 30vw;
   }
+  @media (min-width: 1024px) {
+    width: 20vw;
+  }
   border-radius: 100%;
   border: 2px solid ${(props) => props.theme.primary};
 `;

@@ -56,7 +56,10 @@ const Description = styled.div`
   opacity: 0.5;
 `;
 const Picture = styled.img`
-  width: 150%;
+  max-width: 100%;
+  @media (max-width: 1024px) {
+    max-width: 120%;
+  }
   margin-left: -2em;
   margin-right: -2em;
 `;

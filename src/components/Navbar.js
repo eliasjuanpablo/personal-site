@@ -17,6 +17,7 @@ const Navbar = () => {
 };
 
 const Nav = styled.div`
+  grid-area: nav;
   color: ${(props) => props.theme.primary};
   font-size: 1.2rem;
   font-family: monospace;

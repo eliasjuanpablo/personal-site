@@ -26,6 +26,9 @@ const GlobalStyle = createGlobalStyle`
     @media (min-width: 600px) { 
       font-size: 3vw;
     }
+    @media (min-width: 1024px) {
+      font-size: 16px;
+    }
   }
 
   *,
@@ -60,11 +63,23 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas:
+    "nav"
+    "content"
+    "footer";
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 4fr 1fr;
+
+    grid-template-areas:
+      "nav nav nav"
+      ". content ."
+      "footer footer footer";
+  }
 `;
 
 const Content = styled.div`
+  grid-area: content;
   min-height: 100vh;
   display: block;
 `;
