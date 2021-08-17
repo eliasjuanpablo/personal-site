@@ -5,13 +5,15 @@ import styled from "styled-components";
 const Navbar = () => {
   return (
     <Nav>
-      <Brand>
-        <Link to="/">jpelias</Link>
-      </Brand>
-      <Links>
-        <NavLink to="/">me</NavLink>
-        <NavLink to="/blog">blog</NavLink>
-      </Links>
+      <Wrapper>
+        <Brand>
+          <Link to="/">jpelias</Link>
+        </Brand>
+        <Links>
+          <NavLink to="/">me</NavLink>
+          <NavLink to="/blog">blog</NavLink>
+        </Links>
+      </Wrapper>
     </Nav>
   );
 };
@@ -24,6 +26,15 @@ const Nav = styled.div`
   border-bottom: 1px solid ${(props) => props.theme.primary};
 
   display: flex;
+  justify-content: center;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  width: 100%;
+  @media (min-width: 1024px) {
+    width: 60%;
+  }
 `;
 
 const Brand = styled.div`
