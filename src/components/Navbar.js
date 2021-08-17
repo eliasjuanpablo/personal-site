@@ -10,7 +10,6 @@ const Navbar = () => {
           <Link to="/">jpelias</Link>
         </Brand>
         <Links>
-          <NavLink to="/">me</NavLink>
           <NavLink to="/blog">blog</NavLink>
         </Links>
       </Wrapper>
@@ -50,6 +49,7 @@ const Links = styled.div`
   justify-content: space-evenly;
   align-items: center;
   margin-top: 0;
+  flex-direction: row-reverse;
 
   & a {
     margin-top: 0;
