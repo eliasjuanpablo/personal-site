@@ -1,5 +1,7 @@
-import { graphql } from "gatsby";
 import React from "react";
+import { graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
 import styled from "styled-components";
 import Layout from "../components/Layout";
 
@@ -20,7 +22,7 @@ const BlogPost = (queryResult) => {
             <PostDate>{date}</PostDate>
           </div>
         </Author>
-        <Picture src={picture}></Picture>
+        <Picture image={getImage(picture)} alt=""></Picture>
         <Body dangerouslySetInnerHTML={{ __html: html }}></Body>
       </Wrapper>
     </Layout>
@@ -37,7 +39,7 @@ function extractPost({ data }) {
     date,
     description,
     html,
-    picture: picture?.publicURL,
+    picture,
     title,
   };
 }
@@ -55,7 +57,7 @@ const Description = styled.div`
   margin-top: 0.5em;
   opacity: 0.5;
 `;
-const Picture = styled.img`
+const Picture = styled(GatsbyImage)`
   max-width: 100%;
   @media (max-width: 1024px) {
     max-width: 120%;
@@ -106,7 +108,9 @@ export const query = graphql`
         description
         date(formatString: "MM/DD/YYYY")
         picture {
-          publicURL
+          childImageSharp {
+            gatsbyImageData(placeholder: BLURRED, breakpoints: [750, 1080])
+          }
         }
       }
     }
