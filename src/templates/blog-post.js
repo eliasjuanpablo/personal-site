@@ -3,11 +3,10 @@ import React from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 
-import blogPicture from "../../static/img/django-book.jpg";
 import avatar from "../../static/img/avatar.jpeg";
 
 const BlogPost = (queryResult) => {
-  const { description, html, title, date } = extractPost(queryResult);
+  const { description, html, title, date, picture } = extractPost(queryResult);
 
   return (
     <Layout>
@@ -21,7 +20,7 @@ const BlogPost = (queryResult) => {
             <PostDate>{date}</PostDate>
           </div>
         </Author>
-        <Picture src={blogPicture}></Picture>
+        <Picture src={picture}></Picture>
         <Body dangerouslySetInnerHTML={{ __html: html }}></Body>
       </Wrapper>
     </Layout>
@@ -31,13 +30,14 @@ const BlogPost = (queryResult) => {
 function extractPost({ data }) {
   const {
     html,
-    frontmatter: { title, description, date },
+    frontmatter: { title, description, date, picture },
   } = data.markdownRemark;
 
   return {
     date,
     description,
     html,
+    picture: picture?.publicURL,
     title,
   };
 }
@@ -105,6 +105,9 @@ export const query = graphql`
         title
         description
         date(formatString: "MM/DD/YYYY")
+        picture {
+          publicURL
+        }
       }
     }
   }
