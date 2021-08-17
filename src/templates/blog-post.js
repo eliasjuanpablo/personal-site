@@ -62,11 +62,12 @@ const Description = styled.div`
 `;
 const Picture = styled(GatsbyImage)`
   max-width: 100%;
+
   @media (max-width: 1024px) {
+    margin-left: -2em;
+    margin-right: -2em;
     max-width: 120%;
   }
-  margin-left: -2em;
-  margin-right: -2em;
 `;
 const Credit = styled.div`
   margin-top: 0.5em;
