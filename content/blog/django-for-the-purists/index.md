@@ -1,6 +1,10 @@
 ---
 title: Django for the purist developer
 picture: faisal-g0rtzc1ibtu-unsplash.jpg
+credit: 'Photo by <a
+  href="https://unsplash.com/@faisaldada?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Faisal</a>
+  on <a
+  href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>   '
 date: 2021-08-06T15:28:04.217Z
 description: How to fit maintainability into black magic
 ---

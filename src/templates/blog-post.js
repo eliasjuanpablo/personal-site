@@ -8,7 +8,8 @@ import Layout from "../components/Layout";
 import avatar from "../../static/img/avatar.jpeg";
 
 const BlogPost = (queryResult) => {
-  const { description, html, title, date, picture } = extractPost(queryResult);
+  const { credit, description, html, title, date, picture } =
+    extractPost(queryResult);
 
   return (
     <Layout>
@@ -23,6 +24,7 @@ const BlogPost = (queryResult) => {
           </div>
         </Author>
         <Picture image={getImage(picture)} alt=""></Picture>
+        <Credit dangerouslySetInnerHTML={{ __html: credit }}></Credit>
         <Body dangerouslySetInnerHTML={{ __html: html }}></Body>
       </Wrapper>
     </Layout>
@@ -32,10 +34,11 @@ const BlogPost = (queryResult) => {
 function extractPost({ data }) {
   const {
     html,
-    frontmatter: { title, description, date, picture },
+    frontmatter: { title, credit, description, date, picture },
   } = data.markdownRemark;
 
   return {
+    credit,
     date,
     description,
     html,
@@ -64,6 +67,17 @@ const Picture = styled(GatsbyImage)`
   }
   margin-left: -2em;
   margin-right: -2em;
+`;
+const Credit = styled.div`
+  margin-top: 0.5em;
+  font-size: 0.8em;
+  color: gray;
+  text-align: center;
+
+  & > a {
+    color: inherit;
+    text-decoration: underline;
+  }
 `;
 const Author = styled.div`
   display: flex;
@@ -112,6 +126,7 @@ export const query = graphql`
             gatsbyImageData(placeholder: BLURRED, breakpoints: [750, 1080])
           }
         }
+        credit
       }
     }
   }
