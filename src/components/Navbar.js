@@ -58,7 +58,7 @@ const Links = styled.div`
 
 const NavLink = styled(Link)`
   text-decoration: ${(props) =>
-    typeof window !== "undefined" && window.location.pathname === props.to
+    typeof window !== "undefined" && window.location.pathname.includes(props.to)
       ? "underline"
       : ""};
 `;
