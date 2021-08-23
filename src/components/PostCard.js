@@ -33,9 +33,8 @@ const Card = styled.div`
   font-size: 1rem;
   padding: 1em;
 
-  box-shadow: 1px 6px 6px 0px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 1px 6px 6px 0px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 1px 6px 6px 0px rgba(0, 0, 0, 0.2);
+  border-bottom: 4px solid darkgray;
+  border-radius: 10px;
 
   & a {
     color: inherit;

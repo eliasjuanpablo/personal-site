@@ -11,15 +11,19 @@ const BlogPage = ({ data }) => {
     <Layout>
       <BlogRoll>
         <Title>Blog</Title>
-        {posts.map(({ id, date, title, description, slug }) => (
-          <PostCard
-            key={id}
-            title={title}
-            description={description}
-            publishedDate={date}
-            slug={slug}
-          />
-        ))}
+        <PostsList>
+          {posts.map(({ id, date, title, description, slug }) => (
+            <PostItem>
+              <PostCard
+                key={id}
+                title={title}
+                description={description}
+                publishedDate={date}
+                slug={slug}
+              />
+            </PostItem>
+          ))}
+        </PostsList>
       </BlogRoll>
     </Layout>
   );
@@ -53,7 +57,21 @@ export default () => (
 const Title = styled.h1``;
 
 const BlogRoll = styled.div`
-  padding: 0 1em;
+  padding: 1em;
+`;
+
+const PostsList = styled.ul`
+  padding: 0;
+
+  @media (min-width: 1024px) {
+    column-count: 2;
+    column-gap: 1rem;
+  }
+`;
+
+const PostItem = styled.li`
+  list-style-type: none;
+  break-inside: avoid;
 `;
 
 function extractPosts(data) {
