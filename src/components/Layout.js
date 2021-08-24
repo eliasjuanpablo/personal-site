@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 
 const theme = {
-  primary: "purple",
+  primary: "cornflowerblue",
   secondary: "white",
   background: "#eee",
 };

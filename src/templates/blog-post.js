@@ -51,6 +51,7 @@ const Wrapper = styled.article`
   padding: 0 1em;
   overflow-x: hidden;
   font-family: serif;
+  font-size: 1.2rem;
 `;
 
 const Title = styled.h1`

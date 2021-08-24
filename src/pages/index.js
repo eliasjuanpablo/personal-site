@@ -16,11 +16,12 @@ const IndexPage = () => {
           <Greetings>Hey there!</Greetings>
           <Bio>
             I'm Juan, a fullstack web developer based in Argentina.
-            <br />
             <br />I love coding, <Link to="/blog">writing</Link> and playing
             chess.
           </Bio>
-          <p>Feel free to reach out at:</p>
+          <p>
+            Wanna build something great? <br /> Reach out at:
+          </p>
           <SocialLinks />
         </Profile>
       </Wrapper>
@@ -32,9 +33,15 @@ const Wrapper = styled.div`
   display: grid;
   place-items: center;
   height: 80vh;
+  line-height: 1.5;
 `;
 
 const Profile = styled.div`
+  padding: 1.5em;
+  background: white;
+  border-radius: 10px;
+  border-bottom: 4px solid darkgray;
+
   text-align: center;
   max-width: 80vw;
 
@@ -45,7 +52,8 @@ const Profile = styled.div`
 
 const Greetings = styled.div`
   text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 1.5rem;
+  letter-spacing: -1px;
   color: ${(props) => props.theme.primary};
   font-weight: 800;
 `;
@@ -60,7 +68,7 @@ const Avatar = styled.img`
     width: 20vw;
   }
   border-radius: 100%;
-  border: 2px solid ${(props) => props.theme.primary};
+  border: 3px solid ${(props) => props.theme.primary};
 `;
 
 const Bio = styled.p`

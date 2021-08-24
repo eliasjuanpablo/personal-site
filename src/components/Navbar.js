@@ -20,6 +20,7 @@ const Navbar = () => {
 const Nav = styled.div`
   grid-area: nav;
   color: ${(props) => props.theme.primary};
+  background: ${(props) => props.theme.secondary};
   font-size: 1.2rem;
   font-family: monospace;
   border-bottom: 1px solid ${(props) => props.theme.primary};
@@ -46,13 +47,18 @@ const Brand = styled.div`
 const Links = styled.div`
   display: flex;
   flex: 1;
-  justify-content: space-evenly;
+  justify-content: center;
+  padding: 0 1em;
   align-items: center;
   margin-top: 0;
   flex-direction: row-reverse;
 
   & a {
     margin-top: 0;
+  }
+
+  & a + a {
+    margin-right: 1em;
   }
 `;
 
