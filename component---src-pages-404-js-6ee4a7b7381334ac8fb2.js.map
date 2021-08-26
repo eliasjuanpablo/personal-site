@@ -1,0 +1,1 @@
+{"version":3,"file":"component---src-pages-404-js-6ee4a7b7381334ac8fb2.js","mappings":"0IAEA,qBAAe,OAAM","sources":["webpack://gatsby-netlify/./src/pages/404.js"],"sourcesContent":["import React from \"react\";\n\nexport default () => <h1>404</h1>;\n"],"names":[],"sourceRoot":""}
