@@ -62,11 +62,6 @@ const BlogRoll = styled.div`
 
 const PostsList = styled.ul`
   padding: 0;
-
-  @media (min-width: 1024px) {
-    column-count: 2;
-    column-gap: 1rem;
-  }
 `;
 
 const PostItem = styled.li`

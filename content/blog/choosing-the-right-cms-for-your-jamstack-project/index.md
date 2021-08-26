@@ -34,22 +34,26 @@ I've come up with a simple overview of the most common options that are out here
 
 ### Git vs. API based
 
-* **git based:** this type of CMS's are the go-to option **when your content can simply live in source control**, tipically stored as **markdown files** that are easy to consume at build time and inject into your generated pages. \
-  \
-  You can simply think of these as **fancy editors for your files**: you write rich text and, once you publish, it get's saved as markdown in the filesystem. Some of them also allow you to **sync with your upstream repository** and create new commits whenever you publish, therefore triggering a build and regenerating your site with new / updated content.\
-  \
-  My favorite one (that's also being used in this blog) is [NetlifyCMS](https://www.netlifycms.org/), as it integrates seamlessly with your netlify site's panel and also allows you to fire up a local proxy for offline development.
+#### **Git based**
+
+This type of CMS's are the go-to option **when your content can simply live in source control**, tipically stored as **markdown files** that are easy to consume at build time and inject into your generated pages. \
+\
+You can simply think of these as **fancy editors for your files**: you write rich text and, once you publish, it get's saved as markdown in the filesystem. Some of them also allow you to **sync with your upstream repository** and create new commits whenever you publish, therefore triggering a build and regenerating your site with new / updated content.\
+\
+My favorite one (that's also being used in this blog) is [NetlifyCMS](https://www.netlifycms.org/), as it integrates seamlessly with your netlify site's panel and also allows you to fire up a local proxy for offline development.
 
 <figure>
   <img src="config.png" />
   <figcaption>NetlifyCMS turns your content's shape into fancy UI widgets</figcaption>
 </figure>
 
-* **API based:** as its name indicates, these CMS's expose content via an API, tipically using JSON or GraphQL. You can consume them **both at build and runtime**, and they require minimal client configuration (pointing to the endpoint URL inside the frontend's config or setting token based auth). \
-  \
-  Even though they expose more powerful features, they also tend to be either **self-hosted** (i.e. you should host it yourself on the cloud) or **pricy SaaS** (although this depends on the amount of users / features you need).\
-  \
-  Good examples are the headless versions of **Wordpress**, **Shopify**, and the modern **[Strapi](https://strapi.io/)**.
+#### **API based**
+
+As its name indicates, these CMS's expose content via an API, tipically using JSON or GraphQL. You can consume them **both at build and runtime**, and they require minimal client configuration (pointing to the endpoint URL inside the frontend's config or setting token based auth). \
+\
+Even though they expose more powerful features, they also tend to be either **self-hosted** (i.e. you should host it yourself on the cloud) or **pricy SaaS** (although this depends on the amount of users / features you need).\
+\
+Good examples are the headless versions of **Wordpress**, **Shopify**, and the modern **[Strapi](https://strapi.io/)**.
 
 <figure>
   <img src="strapi-edit.png" />

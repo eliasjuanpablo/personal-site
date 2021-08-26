@@ -111,6 +111,16 @@ const Body = styled.div`
     font-style: italic;
   }
 
+  @media (max-width: 600px) {
+    & > figure {
+      width: 100vw;
+      margin: 0 -1em;
+    }
+    & > figure > figcaption {
+      padding: 0 1em;
+    }
+  }
+
   & > figure > figcaption {
     font-size: 0.8em;
     color: gray;

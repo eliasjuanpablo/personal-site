@@ -31,12 +31,12 @@ module.exports = {
           {
             resolve: "gatsby-remark-images",
             options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
               maxWidth: 2048,
+              srcSetBreakpoints: [1024, 2048],
+              quality: 75,
             },
           },
+          `gatsby-remark-images-zoom`,
           {
             resolve: "gatsby-remark-copy-linked-files",
             options: {
