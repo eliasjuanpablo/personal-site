@@ -50,7 +50,6 @@ function extractPost({ data }) {
 const Wrapper = styled.article`
   padding: 0 1em;
   overflow-x: hidden;
-  font-family: serif;
   font-size: 1.2rem;
 `;
 
@@ -110,6 +109,13 @@ const Body = styled.div`
     border-left: 2px solid gray;
     padding: 1em;
     font-style: italic;
+  }
+
+  & > figure > figcaption {
+    font-size: 0.8em;
+    color: gray;
+    text-align: center;
+    margin-top: 0.5em;
   }
 `;
 
