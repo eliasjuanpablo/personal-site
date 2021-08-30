@@ -68,27 +68,37 @@ data-styled.g33[id="blog-post__Body-sc-18ub0w7-7"]{content:"gzwFgS,"}/*!sc*/
 <h3>3. Declare an interface</h3>
 <p>Create an <strong>interface</strong> that matches the existing props (you can name it "Legacy<em>Something</em>" if you'd like to make it clear for other developers that they're being deprecated).</p>
 <div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token comment">// Hypothetical component with bad props</span>
-<span class="token keyword">function</span> <span class="token function">ConfirmationModal</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">function</span> <span class="token function">SomeComponent</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> <span class="token punctuation">{</span> really<span class="token punctuation">,</span> bad <span class="token punctuation">}</span> <span class="token operator">=</span> props<span class="token punctuation">;</span>
 
-  <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">I'm not the sharpest tool in the shed, and I use </span><span class="token punctuation">{</span>really<span class="token punctuation">}</span><span class="token plain-text"> </span><span class="token punctuation">{</span>bad<span class="token punctuation">}</span><span class="token plain-text"> props in here</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+      I'm not the sharpest tool in the shed, and I use </span><span class="token punctuation">{</span>really<span class="token punctuation">}</span><span class="token plain-text"> </span><span class="token punctuation">{</span>bad<span class="token punctuation">}</span><span class="token plain-text"> props in
+      here
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-ConfirmationModal<span class="token punctuation">.</span>propTypes <span class="token operator">=</span> <span class="token punctuation">{</span>
+SomeComponent<span class="token punctuation">.</span>propTypes <span class="token operator">=</span> <span class="token punctuation">{</span>
   really<span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>string<span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
   bad<span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>string<span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
   signature<span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>string<span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
-<span class="token punctuation">}</span></code></pre></div>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
 <p>Becomes:</p>
-<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token keyword">interface</span> <span class="token class-name">ILegacyConfirmationModalProps</span> <span class="token punctuation">{</span>
-  really<span class="token operator">:</span> <span class="token builtin">string</span><span class="token operator">!</span><span class="token punctuation">;</span>
-  bad<span class="token operator">:</span> <span class="token builtin">string</span><span class="token operator">!</span><span class="token punctuation">;</span>
-  signature<span class="token operator">:</span> <span class="token builtin">string</span><span class="token operator">!</span><span class="token punctuation">;</span>
+<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token keyword">interface</span> <span class="token class-name">ILegacySomeComponentProps</span> <span class="token punctuation">{</span>
+  really<span class="token operator">:</span> <span class="token operator">!</span><span class="token builtin">string</span><span class="token punctuation">;</span>
+  bad<span class="token operator">:</span> <span class="token operator">!</span><span class="token builtin">string</span><span class="token punctuation">;</span>
+  signature<span class="token operator">:</span> <span class="token operator">!</span><span class="token builtin">string</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
- 
-<span class="token keyword">function</span> <span class="token function">ConfirmationModal</span><span class="token punctuation">(</span><span class="token parameter">props<span class="token operator">:</span> ILegacyConfirmationModalProps</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+<span class="token keyword">function</span> <span class="token function">SomeComponent</span><span class="token punctuation">(</span><span class="token parameter">props<span class="token operator">:</span> ILegacySomeComponentProps</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> <span class="token punctuation">{</span> really<span class="token punctuation">,</span> bad <span class="token punctuation">}</span> <span class="token operator">=</span> props<span class="token punctuation">;</span>
-  <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">I'm not the sharpest tool in the shed, and I use </span><span class="token punctuation">{</span>really<span class="token punctuation">}</span><span class="token plain-text"> </span><span class="token punctuation">{</span>bad<span class="token punctuation">}</span><span class="token plain-text"> props in here</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+      I'm not the sharpest tool in the shed, and I use </span><span class="token punctuation">{</span>really<span class="token punctuation">}</span><span class="token plain-text"> </span><span class="token punctuation">{</span>bad<span class="token punctuation">}</span><span class="token plain-text"> props in
+      here
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre></div>
 <p><em>NOTE: You can use types instead. Just stick to some convention that everyone agrees with.</em></p>
 <h3>3. Come up with a better signature</h3>
@@ -101,31 +111,41 @@ ConfirmationModal<span class="token punctuation">.</span>propTypes <span class="
 <p>You should go ahead and <strong>create a new interface</strong> for the improved signature you came up with, and cha<strong>nge the component's signature to use a type union</strong> that handles both prop types.</p>
 <p>In order to achieve this, you have to create a helper function that will <strong>determine if the passed props are legacy</strong>. This is done by the <code class="language-text">isLegacy</code> function, and its implementation depends on your particular case (here we just checked if the <code class="language-text">bad</code> hypothetical prop is present or not).</p>
 <p>You can read more on this (and many other great TS features) <a href="https://www.typescriptlang.org/docs/handbook/2/narrowing.html">here</a>.</p>
-<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token keyword">interface</span> <span class="token class-name">ILegacyConfirmationModalProps</span> <span class="token punctuation">{</span>
-  really<span class="token operator">:</span> <span class="token builtin">string</span><span class="token operator">!</span><span class="token punctuation">;</span>
-  bad<span class="token operator">:</span> <span class="token builtin">string</span><span class="token operator">!</span><span class="token punctuation">;</span>
-  signature<span class="token operator">:</span> <span class="token builtin">string</span><span class="token operator">!</span><span class="token punctuation">;</span>
+<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token keyword">interface</span> <span class="token class-name">ILegacySomeComponentProps</span> <span class="token punctuation">{</span>
+  really<span class="token operator">:</span> <span class="token operator">!</span><span class="token builtin">string</span><span class="token punctuation">;</span>
+  bad<span class="token operator">:</span> <span class="token operator">!</span><span class="token builtin">string</span><span class="token punctuation">;</span>
+  signature<span class="token operator">:</span> <span class="token operator">!</span><span class="token builtin">string</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
 <span class="token comment">// These will be the props that everyone should use from now on.</span>
 <span class="token comment">// Note how this can be completely different from the legacy one.</span>
-<span class="token keyword">interface</span> <span class="token class-name">IConfirmationModalProps</span> <span class="token punctuation">{</span>
-  <span class="token function-variable function">better</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token operator">!</span><span class="token punctuation">;</span>
-  signature<span class="token operator">:</span> <span class="token builtin">string</span><span class="token operator">!</span><span class="token punctuation">;</span>
+<span class="token keyword">interface</span> <span class="token class-name">ISomeComponentProps</span> <span class="token punctuation">{</span>
+  better<span class="token operator">:</span> <span class="token operator">!</span><span class="token keyword">function</span><span class="token punctuation">;</span>
+  signature<span class="token operator">:</span> <span class="token operator">!</span><span class="token builtin">string</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">type</span> <span class="token class-name">Props</span> <span class="token operator">=</span> ILegacyConfirmationModalProps <span class="token operator">|</span> IConfirmationProps
+<span class="token keyword">type</span> <span class="token class-name">Props</span> <span class="token operator">=</span> ILegacySomeComponentProps <span class="token operator">|</span> IConfirmationProps<span class="token punctuation">;</span>
 
-<span class="token keyword">function</span> <span class="token function">isLegacy</span><span class="token punctuation">(</span><span class="token parameter">props<span class="token operator">:</span> Props</span><span class="token punctuation">)</span><span class="token operator">:</span> props <span class="token keyword">is</span> ILegacyConfirmationModalProps <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token punctuation">(</span>props <span class="token keyword">as</span> ILegacyConfirmationModalProps<span class="token punctuation">)</span><span class="token punctuation">.</span>bad <span class="token operator">!==</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">isLegacy</span><span class="token punctuation">(</span><span class="token parameter">props<span class="token operator">:</span> Props</span><span class="token punctuation">)</span><span class="token operator">:</span> props <span class="token keyword">is</span> ILegacySomeComponentProps <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>props <span class="token keyword">as</span> ILegacySomeComponentProps<span class="token punctuation">)</span><span class="token punctuation">.</span>bad <span class="token operator">!==</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-  
-<span class="token keyword">function</span> <span class="token function">ConfirmationModal</span><span class="token punctuation">(</span><span class="token parameter">props<span class="token operator">:</span> Props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+<span class="token keyword">function</span> <span class="token function">SomeComponent</span><span class="token punctuation">(</span><span class="token parameter">props<span class="token operator">:</span> Props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isLegacy</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">I'm not the sharpest tool in the shed, and I use </span><span class="token punctuation">{</span>really<span class="token punctuation">}</span><span class="token plain-text"> </span><span class="token punctuation">{</span>bad<span class="token punctuation">}</span><span class="token plain-text"> props in here</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+        I'm not the sharpest tool in the shed, and I use </span><span class="token punctuation">{</span>really<span class="token punctuation">}</span><span class="token plain-text"> </span><span class="token punctuation">{</span>bad<span class="token punctuation">}</span><span class="token plain-text"> props in
+        here
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
- 
-  <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">Here goes the fancy new behavior! I can use </span><span class="token punctuation">{</span>signature<span class="token punctuation">}</span><span class="token plain-text"> here but not the old ones</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+      Here goes the fancy new behavior! I can use </span><span class="token punctuation">{</span>signature<span class="token punctuation">}</span><span class="token plain-text"> here but not the
+      old ones
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre></div>
 <h3>5. Enjoy responsibly</h3>
 <p>Keep in mind that, even though you'll be able to clear your path towards better features, you'll still have to maintain the legacy implementation and <strong>migrate everything</strong> as early as possible. Technical debt gets harder to fix overtime, so it should be prioritized thoughtfully.</p>
