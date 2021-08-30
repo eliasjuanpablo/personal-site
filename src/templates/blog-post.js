@@ -127,6 +127,21 @@ const Body = styled.div`
     text-align: center;
     margin-top: 0.5em;
   }
+
+  .gatsby-highlight-code-line {
+    margin-top: 0;
+    background-color: hsl(76deg 17% 26%);
+    display: block;
+    margin-right: -1em;
+    margin-left: -1em;
+    padding-right: 1em;
+    padding-left: 0.75em;
+    border-left: 0.25em solid #f99;
+  }
+
+  pre {
+    max-width: 90vw;
+  }
 `;
 
 export default BlogPost;
