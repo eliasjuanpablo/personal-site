@@ -33,7 +33,7 @@ export default () => (
   <StaticQuery
     query={graphql`
       query MyQuery {
-        allMarkdownRemark {
+        allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
           edges {
             node {
               id
