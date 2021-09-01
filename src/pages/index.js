@@ -6,6 +6,7 @@ import Layout from "../components/Layout";
 import SocialLinks from "../components/SocialLinks";
 
 import avatar from "../../static/img/avatar.jpeg";
+import { devices } from "../utils";
 
 const IndexPage = () => {
   return (
@@ -61,10 +62,10 @@ const Greetings = styled.div`
 const Avatar = styled.img`
   display: block;
   width: 50vw;
-  @media (min-width: 600px) {
+  @media ${devices.tablet} {
     width: 30vw;
   }
-  @media (min-width: 1024px) {
+  @media ${devices.laptop} {
     width: 20vw;
   }
   border-radius: 100%;

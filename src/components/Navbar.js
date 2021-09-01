@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
+import { devices } from "../utils";
 
 const Navbar = () => {
   return (
@@ -32,7 +33,7 @@ const Nav = styled.div`
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
-  @media (min-width: 1024px) {
+  @media ${devices.laptop} {
     width: 60%;
   }
 `;

@@ -2,6 +2,7 @@ import React from "react";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
+import { devices } from "../utils";
 
 const theme = {
   primary: "cornflowerblue",
@@ -23,10 +24,10 @@ const Layout = ({ children }) => (
 const GlobalStyle = createGlobalStyle`
   :root {
     font-size: 4vw;
-    @media (min-width: 600px) { 
+    @media ${devices.tablet} {
       font-size: 3vw;
     }
-    @media (min-width: 1024px) {
+    @media ${devices.laptop} {
       font-size: 16px;
     }
   }
@@ -53,6 +54,10 @@ const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.theme.primary};
   }
 
+  figure {
+    margin: 0;
+  }
+
   * + * {
     margin-top: 1em;
   }
@@ -68,7 +73,7 @@ const Wrapper = styled.div`
     "nav"
     "content"
     "footer";
-  @media (min-width: 1024px) {
+  @media ${devices.laptop} {
     grid-template-columns: 1fr 4fr 1fr;
 
     grid-template-areas:

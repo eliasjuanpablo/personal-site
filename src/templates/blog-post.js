@@ -6,6 +6,7 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 
 import avatar from "../../static/img/avatar.jpeg";
+import { devices } from "../utils";
 
 const BlogPost = (queryResult) => {
   const { credit, description, html, title, date, picture } =
@@ -63,7 +64,7 @@ const Description = styled.div`
 const Picture = styled(GatsbyImage)`
   max-width: 100%;
 
-  @media (max-width: 1024px) {
+  @media ${devices.laptop} {
     margin-left: -2em;
     margin-right: -2em;
     max-width: 120%;
@@ -109,16 +110,6 @@ const Body = styled.div`
     border-left: 2px solid gray;
     padding: 1em;
     font-style: italic;
-  }
-
-  @media (max-width: 600px) {
-    & > figure {
-      width: 100vw;
-      margin: 0 -1em;
-    }
-    & > figure > figcaption {
-      padding: 0 1em;
-    }
   }
 
   & > figure > figcaption {
