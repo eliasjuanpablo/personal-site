@@ -13,7 +13,7 @@ const BlogPage = ({ data }) => {
         <Title>Blog</Title>
         <PostsList>
           {posts.map(({ id, date, title, description, slug }) => (
-            <PostItem>
+            <PostItem key={id}>
               <PostCard
                 key={id}
                 title={title}
