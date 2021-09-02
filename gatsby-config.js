@@ -5,7 +5,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/static/img`,
         name: "uploads",
@@ -52,10 +52,20 @@ module.exports = {
         ],
       },
     },
-    "gatsby-plugin-styled-components",
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    "gatsby-plugin-netlify-cms",
+    `gatsby-plugin-netlify-cms`,
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ["G-EECN02Y1LN"],
+        pluginConfig: {
+          head: false,
+          respectDNT: true,
+        },
+      },
+    },
   ],
 };
