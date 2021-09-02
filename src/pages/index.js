@@ -30,7 +30,7 @@ const IndexPage = () => {
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.main`
   display: grid;
   place-items: center;
   height: 80vh;

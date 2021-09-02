@@ -9,7 +9,7 @@ const Footer = () => {
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.footer`
   grid-area: footer;
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   text-align: center;
 `;
 
-const Copyright = styled.div`
+const Copyright = styled.small`
   color: ${(props) => props.theme.secondary};
 `;
 

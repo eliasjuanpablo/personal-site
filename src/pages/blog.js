@@ -56,18 +56,13 @@ export default () => (
 
 const Title = styled.h1``;
 
-const BlogRoll = styled.div`
+const BlogRoll = styled.section`
   padding: 1em;
 `;
 
-const PostsList = styled.ul`
-  padding: 0;
-`;
+const PostsList = styled.section``;
 
-const PostItem = styled.li`
-  list-style-type: none;
-  break-inside: avoid;
-`;
+const PostItem = styled.article``;
 
 function extractPosts(data) {
   return data.allMarkdownRemark.edges.map(({ node }) => {
