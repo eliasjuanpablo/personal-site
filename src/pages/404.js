@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 
-export default () => (
+const NotFoundPage = () => (
   <Layout>
     <Wrapper>
       <Error>404</Error>
@@ -26,3 +26,5 @@ const Error = styled.div`
 `;
 const Description = styled.div``;
 const Back = styled.a``;
+
+export default NotFoundPage;

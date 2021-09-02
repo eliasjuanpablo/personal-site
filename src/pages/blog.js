@@ -29,31 +29,6 @@ const BlogPage = ({ data }) => {
   );
 };
 
-export default () => (
-  <StaticQuery
-    query={graphql`
-      query MyQuery {
-        allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
-          edges {
-            node {
-              id
-              frontmatter {
-                title
-                date
-                description
-              }
-              fields {
-                slug
-              }
-            }
-          }
-        }
-      }
-    `}
-    render={(data) => <BlogPage data={data} />}
-  />
-);
-
 const Title = styled.h1``;
 
 const BlogRoll = styled.section`
@@ -78,4 +53,31 @@ function extractPosts(data) {
       slug,
     };
   });
+}
+
+export default function Page() {
+  return (
+    <StaticQuery
+      query={graphql`
+        query MyQuery {
+          allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
+            edges {
+              node {
+                id
+                frontmatter {
+                  title
+                  date
+                  description
+                }
+                fields {
+                  slug
+                }
+              }
+            }
+          }
+        }
+      `}
+      render={(data) => <BlogPage data={data} />}
+    />
+  );
 }

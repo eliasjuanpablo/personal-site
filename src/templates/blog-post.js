@@ -18,7 +18,7 @@ const BlogPost = (queryResult) => {
         <Title>{title}</Title>
         <Description>{description}</Description>
         <Author>
-          <img src={avatar} />
+          <img src={avatar} alt="avatar" />
           <div>
             Juan Pablo Elias <br />
             <PostDate>{date}</PostDate>
