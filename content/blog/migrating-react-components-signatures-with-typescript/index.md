@@ -61,9 +61,9 @@ Becomes:
 
 ```tsx
 interface ILegacySomeComponentProps {
-  really: !string;
-  bad: !string;
-  signature: !string;
+  really: string;
+  bad: string;
+  signature: string;
 }
 
 function SomeComponent(props: ILegacySomeComponentProps) {
@@ -101,16 +101,16 @@ You can read more on this (and many other great TS features) [here](https://www.
 
 ```tsx
 interface ILegacySomeComponentProps {
-  really: !string;
-  bad: !string;
-  signature: !string;
+  really: string;
+  bad: string;
+  signature: string;
 }
 
 // These will be the props that everyone should use from now on.
 // Note how this can be completely different from the legacy one.
 interface ISomeComponentProps {
-  better: !function;
-  signature: !string;
+  better: string;
+  signature: string;
 }
 
 type Props = ILegacySomeComponentProps | IConfirmationProps;
