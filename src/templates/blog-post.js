@@ -4,13 +4,14 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import styled from "styled-components";
 import Layout from "../components/Layout";
+import AdjacentPosts from "../components/AdjacentPosts";
 
 import avatar from "../../static/img/avatar.jpeg";
 import { devices } from "../utils";
 
-const BlogPost = (queryResult) => {
-  const { credit, description, html, title, date, picture } =
-    extractPost(queryResult);
+const BlogPost = ({ data, pageContext }) => {
+  const { credit, description, html, title, date, picture } = extractPost(data);
+  const { nextPost, previousPost } = pageContext;
 
   return (
     <Layout>
@@ -27,12 +28,13 @@ const BlogPost = (queryResult) => {
         <Picture image={getImage(picture)} alt=""></Picture>
         <Credit dangerouslySetInnerHTML={{ __html: credit }}></Credit>
         <Body dangerouslySetInnerHTML={{ __html: html }}></Body>
+        <AdjacentPosts nextPost={nextPost} previousPost={previousPost} />
       </Wrapper>
     </Layout>
   );
 };
 
-function extractPost({ data }) {
+function extractPost(data) {
   const {
     html,
     frontmatter: { title, credit, description, date, picture },
@@ -105,6 +107,7 @@ const PostDate = styled.span`
 const Body = styled.div`
   line-height: 1.5;
   max-width: 90vw;
+  margin-bottom: 4em;
 
   & > blockquote {
     background: rgba(0, 0, 0, 0.05);

@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
   :root {
     font-size: 4vw;
     @media ${devices.tablet} {
-      font-size: 3vw;
+      font-size: 2vw;
     }
     @media ${devices.laptop} {
       font-size: 16px;
