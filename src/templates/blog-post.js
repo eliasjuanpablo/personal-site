@@ -104,6 +104,7 @@ const PostDate = styled.span`
 
 const Body = styled.div`
   line-height: 1.5;
+  max-width: 90vw;
 
   & > blockquote {
     background: rgba(0, 0, 0, 0.05);
@@ -119,6 +120,10 @@ const Body = styled.div`
     margin-top: 0.5em;
   }
 
+  .gatsby-highlight {
+    overflow: auto;
+  }
+
   .gatsby-highlight-code-line {
     margin-top: 0;
     background-color: hsl(76deg 17% 26%);
@@ -130,8 +135,16 @@ const Body = styled.div`
     border-left: 0.25em solid #f99;
   }
 
-  pre {
-    max-width: 90vw;
+  .gatsby-highlight pre[class*="language-"] {
+    float: left;
+    min-width: 100%;
+  }
+
+  .language-text {
+    white-space: nowrap;
+    background: #adadad6b;
+    color: inherit;
+    border-radius: 0;
   }
 `;
 

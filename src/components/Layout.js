@@ -58,6 +58,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
+  blockquote {
+    margin: 0;
+  }
+
   * + * {
     margin-top: 1em;
   }
