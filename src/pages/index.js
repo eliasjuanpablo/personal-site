@@ -71,6 +71,10 @@ const Avatar = styled.div`
     height: 20vw;
     width: 20vw;
   }
+  @media ${devices.wide} {
+    height: 15em;
+    width: 15em;
+  }
   border-radius: 100%;
   border: 3px solid ${(props) => props.theme.primary};
 
