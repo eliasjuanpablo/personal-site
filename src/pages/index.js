@@ -59,17 +59,23 @@ const Greetings = styled.div`
   font-weight: 800;
 `;
 
-const Avatar = styled.img`
+const Avatar = styled.div`
   display: block;
+  height: 50vw;
   width: 50vw;
   @media ${devices.tablet} {
+    height: 30vw;
     width: 30vw;
   }
   @media ${devices.laptop} {
+    height: 20vw;
     width: 20vw;
   }
   border-radius: 100%;
   border: 3px solid ${(props) => props.theme.primary};
+
+  background: url(${(props) => props.src}) no-repeat;
+  background-size: cover;
 `;
 
 const Bio = styled.p`
