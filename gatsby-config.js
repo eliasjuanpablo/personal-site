@@ -1,9 +1,12 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.jpelias.com",
-    title: "jpelias",
+    title: "Juan Pablo Elias - Fullstack Web Developer",
+    description: "Juan's personal site & opinionated blog",
+    author: "Juan Pablo Elias",
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

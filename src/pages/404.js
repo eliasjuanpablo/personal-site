@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
+import Seo from "../components/Seo";
 
 const NotFoundPage = () => (
   <Layout>
+    <Seo title="Whoops!" />
     <Wrapper>
       <Error>404</Error>
 

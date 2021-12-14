@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 
 import Layout from "../components/Layout";
+import Seo from "../components/Seo";
 import SocialLinks from "../components/SocialLinks";
 
 import avatar from "../../static/img/avatar.jpeg";
@@ -11,6 +12,7 @@ import { devices } from "../utils";
 const IndexPage = () => {
   return (
     <Layout>
+      <Seo title="Hey there!" />
       <Wrapper>
         <Profile>
           <Avatar src={avatar}></Avatar>

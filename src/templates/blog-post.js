@@ -3,8 +3,9 @@ import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import styled from "styled-components";
-import Layout from "../components/Layout";
 import AdjacentPosts from "../components/AdjacentPosts";
+import Layout from "../components/Layout";
+import Seo from "../components/Seo";
 
 import avatar from "../../static/img/avatar.jpeg";
 import { devices } from "../utils";
@@ -15,6 +16,7 @@ const BlogPost = ({ data, pageContext }) => {
 
   return (
     <Layout>
+      <Seo title={title} />
       <Wrapper>
         <Title>{title}</Title>
         <Description>{description}</Description>

@@ -3,12 +3,14 @@ import * as React from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import PostCard from "../components/PostCard";
+import Seo from "../components/Seo";
 
 const BlogPage = ({ data }) => {
   const posts = extractPosts(data);
 
   return (
     <Layout>
+      <Seo title="Blog" />
       <BlogRoll>
         <Title>Blog</Title>
         <PostsList>
