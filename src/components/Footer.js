@@ -10,7 +10,6 @@ const Footer = () => {
 };
 
 const Wrapper = styled.footer`
-  grid-area: footer;
   display: flex;
   flex-direction: column;
   align-items: center;

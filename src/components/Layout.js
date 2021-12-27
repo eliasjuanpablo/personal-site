@@ -71,26 +71,15 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const Wrapper = styled.div`
-  display: grid;
-  grid-template-areas:
-    "nav"
-    "content"
-    "footer";
-  @media ${devices.laptop} {
-    grid-template-columns: 1fr 4fr 1fr;
-
-    grid-template-areas:
-      "nav nav nav"
-      ". content ."
-      "footer footer footer";
-  }
-`;
+const Wrapper = styled.div``;
 
 const Content = styled.div`
-  grid-area: content;
+  padding-top: 1em;
   min-height: 100vh;
-  display: block;
+  @media ${devices.tablet} {
+    width: 60%;
+    margin: auto;
+  }
 `;
 
 export default Layout;

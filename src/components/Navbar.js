@@ -19,7 +19,6 @@ const Navbar = () => {
 };
 
 const Nav = styled.nav`
-  grid-area: nav;
   color: ${(props) => props.theme.primary};
   background: ${(props) => props.theme.secondary};
   font-size: 1.2rem;
