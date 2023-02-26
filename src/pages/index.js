@@ -18,9 +18,9 @@ const IndexPage = () => {
           <Avatar src={avatar}></Avatar>
           <Greetings>Hey there!</Greetings>
           <Bio>
-            I'm Juan, a fullstack web developer based in Argentina.
-            <br />I love coding, <Link to="/blog">writing</Link> and playing
-            chess.
+            I'm Juan, an Argentine 🇦🇷 fullstack web developer based in Uruguay
+            🇺🇾.
+            <br />I love coding, writing and playing chess.
           </Bio>
           <p>
             Wanna build something great? <br /> Reach out at:

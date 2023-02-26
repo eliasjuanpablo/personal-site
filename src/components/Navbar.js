@@ -10,9 +10,6 @@ const Navbar = () => {
         <Brand>
           <Link to="/">jpelias</Link>
         </Brand>
-        <Links>
-          <NavLink to="/blog">blog</NavLink>
-        </Links>
       </Wrapper>
     </Nav>
   );
